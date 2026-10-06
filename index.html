@@ -654,6 +654,16 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
 #case-arsham .fbpost .fb-h{padding:8px 12px}
 #case-arsham .fbpost .fb-b b{font-size:14px}
 #case-arsham .fbpost .fb-b p{font-size:12.5px}
+
+/* 联系卡片与左侧正文等高对齐：标题在上，联系方式贴底 */
+@media (min-width:861px){
+  .about{align-items:stretch}
+  .about>div:first-child{display:flex;flex-direction:column}
+  .contact{display:flex;flex-direction:column;margin-top:35px}
+  .contact h3{margin-bottom:0}
+  .contact .crow:first-of-type{margin-top:auto}
+  .contact .crow:last-child{padding-bottom:0}
+}
 </style>
 </head>
 <body>
