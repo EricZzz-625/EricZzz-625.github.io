@@ -664,6 +664,30 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
   .contact .crow:first-of-type{margin-top:auto}
   .contact .crow:last-child{padding-bottom:0}
 }
+
+/* ===== 润色：按现有规范统一可读性、对齐与断行 ===== */
+p,li,dd,.strat li{text-wrap:pretty}
+h1,h2,h3,h4,h5,.sec-head h2{text-wrap:balance}
+.nowrap{white-space:nowrap}
+/* 辅助说明不小于 13px，正文层级不变 */
+.note,.pc-asof,.src-note{font-size:13px;line-height:1.65}
+.card p,.kpis p,.stat p,.xl-kpi p{font-size:13px}
+.ig-meta,.fb-h span,.pc-name span{font-size:12.5px}
+.yt-pair .t{font-size:12px}
+/* 同排卡片：底部链接对齐 */
+.xpo .fb-b{display:flex;flex-direction:column;gap:6px}
+.xpo .fb-open{margin-top:auto;padding-top:6px}
+.ks-card .ks-body{flex:1}
+.ks-card .ks-go{margin-top:auto;padding-top:4px}
+.ks-cards.two{align-items:stretch}
+/* 介绍卡：说明与注释之间留出节奏，不让中段过空 */
+.ig-intro{justify-content:flex-start}
+.ig-intro h4{font-size:20px}
+.ig-intro>p:not(.note){font-size:14.5px}
+/* KOL 头像文字居中不被遮挡 */
+.avs i{font-size:12px;letter-spacing:0}
+
+@media (max-width:640px){.nav ul{-webkit-mask-image:linear-gradient(90deg,#000 82%,transparent);mask-image:linear-gradient(90deg,#000 82%,transparent);padding-right:24px}}
 </style>
 </head>
 <body>
@@ -937,7 +961,7 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
           <span class="mono">高光帖子 · Reels</span>
           <h4>三条 Reels，三种内容角色</h4>
           <p>新品功能讲清卖点，桌面搭配展示使用场景，视觉质感负责品牌调性。</p>
-          <div class="kol"><div class="avs"><i>Fosi</i><i>KOL</i></div><span>Collab 联合投稿：同一帖子同时出现在品牌与创作者主页</span></div>
+          <div class="kol"><div class="avs"><i>F</i><i>KOL</i></div><span>Collab 联合投稿：同一帖子同时出现在品牌与创作者主页</span></div>
           <p class="note" id="igNote" style="margin-top:auto">点击在 Instagram 打开</p>
           <p class="note" style="margin-top:4px">点赞数为公开数据，截至 2026 年 10 月。</p>
         </div>
@@ -1105,7 +1129,7 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
   <div class="wrap">
     <div class="sec-head">
       <div><span class="mono">Community · Facebook Group</span><h2>社群运营</h2></div>
-      <p>公域社群：让用户彼此对话。Fosi Audio Global Community 与 Discord 私域社群 Fosi + 形成公私域互补，前者负责开放交流与用户洞察，后者承接核心用户。</p>
+      <p>公域社群：让用户彼此对话。Fosi Audio Global Community 与 Discord 私域社群 Fosi&nbsp;+ 形成公私域互补，前者负责开放交流与用户洞察，后者承接<span class="nowrap">核心用户。</span></p>
     </div>
     <div class="cm-panel">
       <div class="cv-body" style="margin-top:0">
@@ -1122,7 +1146,7 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
             <span class="mono">公私域分工 · 两个社群如何互补</span>
             <div class="gp">
               <div class="gp-col on"><span class="gp-tag">公域</span><b>Facebook Group</b><p>Fosi Audio Global Community</p><span class="num">1 万+<small>成员</small></span><p>发烧友互相交流的公共空间：话题讨论、产品调研、UGC 测评</p></div>
-              <div class="gp-col"><span class="gp-tag">私域</span><b>Discord</b><p>Fosi +</p><span class="num">1,853<small>成员</small></span><p>核心用户层：新品发布、用户反馈与 UGC 的主要承接场</p><a href="#cases" data-open-case="discord">查看 Discord 案例 →</a></div>
+              <div class="gp-col"><span class="gp-tag">私域</span><b>Discord</b><p>Fosi&nbsp;+</p><span class="num">1,853<small>成员</small></span><p>核心用户层：新品发布、用户反馈与 UGC 的主要承接场</p><a href="#cases" data-open-case="discord">查看 Discord 案例 →</a></div>
             </div>
           </div>
         </div>
@@ -1190,7 +1214,7 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
       <div class="cv-body">
         <div>
           <div class="lbl">背景</div>
-          <p class="bg">社媒平台上的注意力是租来的，不属于品牌。Fosi 需要一个活动结束后用户仍会留下来的地方。我从零搭建了品牌社群 Fosi +。</p>
+          <p class="bg">社媒平台上的注意力是租来的，不属于品牌。Fosi 需要一个活动结束后用户仍会留下来的地方。我从零搭建了品牌社群 Fosi&nbsp;+。</p>
           <div class="lbl">策略</div>
           <ul class="strat">
             <li><b>漏斗</b>设计“公域导私域”的链路，把各社媒平台的受众沉淀进社群。相比信息流平台，社群的留存和复访要高得多。</li>
@@ -1226,13 +1250,13 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
           </div>
           <div class="flow sm" aria-label="公域导私域链路">
             <div><b>各社媒平台</b><span>公域受众</span></div>
-            <div><b>Fosi + 社群</b><span>自有受众层</span></div>
+            <div><b>Fosi&nbsp;+ 社群</b><span>自有受众层</span></div>
             <div><b>发布 · 反馈 · UGC</b><span>主要承接场</span></div>
           </div>
           <ul class="res">
             <li>社群从 0 起步积累至 443 人，系统化运营后增长 <strong>4 倍</strong>，达到 <strong>1,853 人</strong>。</li>
             <li>周活跃成员占比 <strong>15%</strong>，由等级体系持续驱动，而非依赖活动拉动。</li>
-            <li>Fosi + 成为品牌的自有受众层：新品发布、用户反馈和 UGC 的主要承接场。</li>
+            <li>Fosi&nbsp;+ 成为品牌的自有受众层：新品发布、用户反馈和 UGC 的主要承接场。</li>
           </ul>
         </div>
       </div>
@@ -1427,7 +1451,7 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
           <li><b>X</b><span>Global 与 Japan</span></li>
           <li><b>LINE</b><span>日本</span></li>
           <li><b>Facebook Group</b><span>公域社群 1 万+ 成员</span></li>
-          <li><b>Discord</b><span>私域社群 Fosi +</span></li>
+          <li><b>Discord</b><span>私域社群 Fosi&nbsp;+</span></li>
           <li><b>Kickstarter · Makuake</b><span>众筹发布</span></li>
         </ul>
       </div>
@@ -1442,7 +1466,7 @@ section.hero{background:var(--bg);position:relative;isolation:isolate;overflow:h
       <div>
         <span class="mono">About</span>
         <p class="big" style="margin-top:14px">我是 <span data-profile="name">Eric Zheng</span>，在 Fosi Audio 运营海外社媒矩阵，覆盖 Facebook、YouTube、Instagram、X、LINE、TikTok，以及 Facebook Group 与 Discord 两个社群。</p>
-        <p>工作的重点是先为每个平台找到清楚的角色，再用内容结构与传播节奏把角色落到可验证的数据上。比起堆更多内容，我更关心一次调整能不能被复用：Carousel 的新品预热、连续 40 期的 Friday Challenge、从零搭建的 Fosi + 社群，都是可以延续到下一次传播的做法。</p>
+        <p>工作的重点是先为每个平台找到清楚的角色，再用内容结构与传播节奏把角色落到可验证的数据上。比起堆更多内容，我更关心一次调整能不能被复用：Carousel 的新品预热、连续 40 期的 Friday Challenge、从零搭建的 Fosi&nbsp;+ 社群，都是可以延续到下一次传播的做法。</p>
       </div>
       <div class="contact" id="contact">
         <span class="mono">Contact</span>
