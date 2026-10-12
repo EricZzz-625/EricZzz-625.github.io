@@ -4,6 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <script>window.ALLOW_EMBED=true</script>
+<!-- 百度统计：只在正式网站（GitHub Pages）里加载 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?45a0aa6b38c77372e848953a18d99813";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
 <title>海外社媒增长作品集</title>
 <meta name="description" content="海外社媒运营与内容策略作品集：Facebook、YouTube、Instagram、X 与 LINE、TikTok 的平台定位、内容策略与增长结果。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1509,6 +1519,7 @@ h1,h2,h3,h4,h5,.sec-head h2{text-wrap:balance}
       <li>年度数据注明“2025 全年”或“2026 年 1–8 月”，两者不是等长周期；“月均折算”为按月数平均的参考值。</li>
       <li>增长倍数、订单等数据保留“约”、币种与加号；订单为 S3 Streamer 内容带来的独立站订单，按现有归因口径表述。</li>
       <li>自然流量、广告流量、总观看与触达不互换使用；粉丝增长为接手前后或起点到当前规模。</li>
+      <li>本站使用百度统计记录匿名访问数据（访问时间、停留时长、来源与浏览路径），不收集姓名等个人身份信息。</li>
     </ul>
   </div>
 </footer>
@@ -1980,6 +1991,26 @@ onceVisible($("#community .cv-body"), p => {
     el.addEventListener("pointerleave", () => { tx = 0; ty = 0; kick(); });
   });
 })();
+
+/* ===== 访问统计：关键动作记为百度统计事件（正式网站才会加载统计代码） ===== */
+function track(category, action, label){
+  try { if (window._hmt) window._hmt.push(["_trackEvent", category, action, label || ""]); } catch (e) {}
+}
+document.addEventListener("click", e => {
+  const el = e.target.closest("#copyEmail, .cv-tab, .vid, [data-ig], [data-tt], .fbpost, .ks-card, .pcard, .rec, .kw, .btn.primary");
+  if (!el) return;
+  const name = (el.getAttribute("title") || el.querySelector("b")?.textContent || el.textContent || "").trim().slice(0, 60);
+  if (el.id === "copyEmail")          track("联系", "复制邮箱");
+  else if (el.matches(".cv-tab"))     track("重点案例", "打开案例", el.querySelector("b")?.textContent.trim());
+  else if (el.matches(".vid"))        track("视频", "播放 YouTube", name);
+  else if (el.matches("[data-tt]"))   track("视频", "播放 TikTok", name);
+  else if (el.matches("[data-ig]"))   track("帖子", "打开 Instagram", name);
+  else if (el.matches(".fbpost"))     track("帖子", "打开帖子", name);
+  else if (el.matches(".ks-card"))    track("众筹", "查看项目页", name);
+  else if (el.matches(".pcard"))      track("账号", "查看主页", name);
+  else if (el.matches(".rec, .kw"))   track("外链", "打开链接", name);
+  else                                track("导航", "首屏按钮", name);
+}, true);
 
 /* ===== 复制邮箱：页面上不显示、源码里也不出现明文，点击后才写入剪贴板 ===== */
 (function(){
